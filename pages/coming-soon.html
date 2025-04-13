@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eDiscoveryQC - Coming Soon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            text-align: center;
+            background: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 10px 0 20px;
+        }
+        #countdown {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 30px;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>eDiscoveryQC</h1>
+    <p>Revolutionizing QC for eDiscovery Professionals</p>
+    <div id="countdown">60 Days</div>
+    <div class="footer">
+        <p>Follow us on <a href="https://www.linkedin.com/company/ediscoveryqc/" target="_blank">LinkedIn</a></p>
+    </div>
+
+    <script>
+        // Countdown Timer Script
+        const countdownElement = document.getElementById('countdown');
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 60);
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = launchDate - now;
+
+            if (diff <= 0) {
+                countdownElement.textContent = "We're Live!";
+            } else {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                countdownElement.textContent = `${days} Days`;
+            }
+        }
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
